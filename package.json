@@ -1,17 +1,48 @@
 {
-  "name": "workspace-blank",
+  "name": "personnel-management",
   "version": "1.0.0",
-  "description": "This repository is empty. Any task executed on it should be considered a new capability and needs to be created.",
-  "main": "index.js",
+  "description": "A modern React-based personnel management application built with Ant Design components",
+  "main": "src/App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "personnel",
+    "management",
+    "antd",
+    "crud",
+    "employee"
+  ],
+  "author": "yanqianyu",
   "license": "ISC",
   "dependencies": {
     "antd": "^5.0.0",
     "@ant-design/icons": "^4.7.0",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "^5.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.0",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
