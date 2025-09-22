@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal, message } from 'antd';
+import { Link } from 'react-router-dom';
 import PersonnelForm from '../components/PersonnelForm';
 import { fetchPersonnel, addPersonnel, editPersonnel, deletePersonnel } from '../api/personnel';
 
@@ -78,8 +79,11 @@ const PersonnelManagementPage = () => {
       key: 'actions',
       render: (text, record) => (
         <>
-          <Button onClick={() => handleEdit(record)}>Edit</Button>
-          <Button onClick={() => handleDelete(record.id)} danger>Delete</Button>
+          <Button onClick={() => handleEdit(record)} style={{ marginRight: '8px' }}>Edit</Button>
+          <Button onClick={() => handleDelete(record.id)} danger style={{ marginRight: '8px' }}>Delete</Button>
+          <Link to={`/personnel-management/resume/${record.id}`}>
+            <Button>View Resume</Button>
+          </Link>
         </>
       ),
     },
@@ -87,11 +91,11 @@ const PersonnelManagementPage = () => {
 
   return (
     <div>
-      <Button type="primary" onClick={handleAdd}>Add Personnel</Button>
+      <Button type="primary" onClick={handleAdd} style={{ marginBottom: '16px' }}>Add Personnel</Button>
       <Table columns={columns} dataSource={personnelData} rowKey="id" />
       <Modal
         title={editingPersonnel ? 'Edit Personnel' : 'Add Personnel'}
-        visible={isModalVisible}
+        open={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={null}
       >
